@@ -1,0 +1,7 @@
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:972:45:get_bit	0	static
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:1008:50:lv_color16_from_u16	0	static
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:956:42:lv_color_8_8_mix	8	static
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:979:42:blend_non_normal_pixel	24	static
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:783:35:rgb888_image_blend	72	static
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:187:28:lv_draw_sw_blend_color_to_l8	48	static
+../Middlewares/lvgl/src/draw/sw/blend/lv_draw_sw_blend_to_l8.c:289:28:lv_draw_sw_blend_image_to_l8	72	static

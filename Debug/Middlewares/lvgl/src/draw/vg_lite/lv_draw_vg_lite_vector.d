@@ -1,0 +1,10 @@
+Middlewares/lvgl/src/draw/vg_lite/lv_draw_vg_lite_vector.o: \
+ ../Middlewares/lvgl/src/draw/vg_lite/lv_draw_vg_lite_vector.c \
+ ../Middlewares/lvgl/src/draw/vg_lite/lv_draw_vg_lite.h \
+ ../Middlewares/lvgl/src/draw/vg_lite/../../lv_conf_internal.h \
+ ../Middlewares/lvgl/src/draw/vg_lite/../../lv_conf_kconfig.h \
+ /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h
+../Middlewares/lvgl/src/draw/vg_lite/lv_draw_vg_lite.h:
+../Middlewares/lvgl/src/draw/vg_lite/../../lv_conf_internal.h:
+../Middlewares/lvgl/src/draw/vg_lite/../../lv_conf_kconfig.h:
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h:

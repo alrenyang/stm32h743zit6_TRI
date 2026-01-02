@@ -1,0 +1,9 @@
+../Core/Src/lcd.c:122:25:lcdDrawPixel	0	static
+../Core/Src/lcd.c:35:6:lcdPrintf	324	static
+../Core/Src/lcd.c:142:6:lcdSetFrameBuffer	0	static
+../Core/Src/lcd.c:147:11:lcdGetFrameBuffer	0	static
+../Core/Src/lcd.c:152:6:LCD_ShowLogo	8	static
+../Core/Src/lcd.c:160:6:lcdRegisterVsyncCallback	0	static
+../Core/Src/lcd.c:165:6:lcdUpdateDraw	0	static,ignoring_inline_asm
+../Core/Src/lcd.c:187:6:lcdEnableVsyncLineInterrupt	4	static
+../Core/Src/lcd.c:198:6:HAL_LTDC_LineEventCallback	8	static

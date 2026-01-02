@@ -1,0 +1,4 @@
+../Middlewares/lvgl/src/draw/sw/lv_draw_sw_img.c:560:13:recolor	88	static
+../Middlewares/lvgl/src/draw/sw/lv_draw_sw_img.c:216:13:img_draw_core	256	static
+../Middlewares/lvgl/src/draw/sw/lv_draw_sw_img.c:201:6:lv_draw_sw_image	0	static
+../Middlewares/lvgl/src/draw/sw/lv_draw_sw_img.c:104:6:lv_draw_sw_layer	232	static

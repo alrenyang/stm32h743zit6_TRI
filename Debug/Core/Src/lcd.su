@@ -1,0 +1,6 @@
+../Core/Src/lcd.c:24:6:lcdPrintf	316	static
+../Core/Src/lcd.c:92:6:disEngFont	40	static
+../Core/Src/lcd.c:111:25:lcdDrawPixel	0	static
+../Core/Src/lcd.c:131:6:lcdSetFrameBuffer	16	static
+../Core/Src/lcd.c:136:11:lcdGetFrameBuffer	4	static
+../Core/Src/lcd.c:141:6:LCD_ShowLogo	8	static

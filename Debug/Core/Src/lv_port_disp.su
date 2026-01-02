@@ -1,0 +1,6 @@
+../Core/Src/lv_port_disp.c:43:6:lv_port_callback	8	static
+../Core/Src/lv_port_disp.c:48:6:lv_port_disp_init	24	static
+../Core/Src/lv_port_disp.c:70:13:disp_init	4	static
+../Core/Src/lv_port_disp.c:79:6:disp_enable_update	4	static
+../Core/Src/lv_port_disp.c:86:6:disp_disable_update	4	static
+../Core/Src/lv_port_disp.c:127:13:disp_flush	24	static

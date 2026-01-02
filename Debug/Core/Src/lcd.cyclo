@@ -1,0 +1,6 @@
+../Core/Src/lcd.c:24:6:lcdPrintf	4
+../Core/Src/lcd.c:92:6:disEngFont	4
+../Core/Src/lcd.c:111:25:lcdDrawPixel	3
+../Core/Src/lcd.c:131:6:lcdSetFrameBuffer	1
+../Core/Src/lcd.c:136:11:lcdGetFrameBuffer	1
+../Core/Src/lcd.c:141:6:LCD_ShowLogo	1

@@ -1,0 +1,8 @@
+../Core/Src/key_input.c:59:13:q_push	16	static
+../Core/Src/key_input.c:75:23:read_pressed	8	static
+../Core/Src/key_input.c:67:6:KeyInput_GetEvent	0	static
+../Core/Src/key_input.c:129:6:KeyInput_IsPressed	0	static
+../Core/Src/key_input.c:177:9:KeyInput_EncoderGetDiffAndClear	0	static
+../Core/Src/key_input.c:184:6:KeyInput_EncoderIsPressed	0	static
+../Core/Src/key_input.c:190:6:KeyInput_Init	24	static
+../Core/Src/key_input.c:212:6:KeyInput_Tick	40	static

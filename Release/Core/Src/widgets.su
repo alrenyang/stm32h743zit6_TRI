@@ -1,0 +1,17 @@
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/../misc/lv_style.h:531:20:lv_style_set_pad_all	16	static
+../Core/Src/widgets.c:56:13:table_cell_clicked_cb	56	static
+../Core/Src/widgets.c:628:13:ui_open_blank_screen	24	static
+../Core/Src/widgets.c:673:13:row_event_cb	16	static
+../Core/Src/widgets.c:176:19:make_btn	16	static
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v8.h:86:20:lv_obj_move_foreground	8	static
+../Core/Src/widgets.c:388:13:encoder_group_rebuild	24	static
+../Core/Src/widgets.c:660:13:ui_close_blank_screen	8	static
+../Core/Src/widgets.c:693:13:blank_focus_event_cb	16	static
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/lv_obj_style.h:196:20:lv_obj_set_style_pad_all.constprop	16	static
+../Core/Src/widgets.c:167:19:make_tag.constprop.isra	16	static
+../Core/Src/widgets.c:193:19:table_cell_label.isra	32	static
+../Core/Src/widgets.c:289:13:table_build	128	static
+../Core/Src/widgets.c:411:15:widgets_create_strobe_screen	136	static
+../Core/Src/widgets.c:574:6:widgets_bind_encoder	16	static
+../Core/Src/widgets.c:600:6:widgets_table_set_channel_count	16	static
+../Core/Src/widgets.c:619:6:widgets_table_set_cell	4	static

@@ -1,0 +1,12 @@
+../Middlewares/lvgl/src/misc/lv_style.c:178:6:lv_style_init	0	static
+../Middlewares/lvgl/src/misc/lv_style.c:192:6:lv_style_reset	8	static
+../Middlewares/lvgl/src/misc/lv_style.c:233:17:lv_style_register_prop	16	static
+../Middlewares/lvgl/src/misc/lv_style.c:269:17:lv_style_get_num_custom_props	0	static
+../Middlewares/lvgl/src/misc/lv_style.c:274:6:lv_style_remove_prop	24	static
+../Middlewares/lvgl/src/misc/lv_style.c:327:6:lv_style_set_prop	24	static
+../Middlewares/lvgl/src/misc/lv_style.c:204:6:lv_style_copy	24	static
+../Middlewares/lvgl/src/misc/lv_style.c:382:16:lv_style_get_prop	16	static
+../Middlewares/lvgl/src/misc/lv_style.c:387:6:lv_style_transition_dsc_init	24	static
+../Middlewares/lvgl/src/misc/lv_style.c:398:18:lv_style_prop_get_default	8	static
+../Middlewares/lvgl/src/misc/lv_style.c:467:6:lv_style_is_empty	0	static
+../Middlewares/lvgl/src/misc/lv_style.c:474:9:lv_style_prop_lookup_flags	0	static
