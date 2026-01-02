@@ -1,6 +1,8 @@
 
 
 주의 사항.
+git 주소
+https://github.com/alrenyang/stm32h743zit6_TRI.git
 
 1 헤더추가 -----------------------------------------
 Middlewares/Third_Party/LwIP/src/core/tcp.c
