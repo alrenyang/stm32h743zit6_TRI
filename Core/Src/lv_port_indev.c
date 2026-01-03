@@ -128,7 +128,7 @@ static void encoder_read(lv_indev_t * indev, lv_indev_data_t * data)
 static uint32_t map_key_to_lv(KeyId_t id)
 {
     switch (id) {
-    case KEY_LOCAL:  return LV_KEY_ENTER;	//로터리푸쉬키입력
+    case KEY_LOCAL:  return USE_ENCODER_SW;	//로터리푸쉬키입력
     case KEY_REMOTE: return LV_KEY_DOWN;
 
     case KEY_DATA0:  return LV_KEY_BACKSPACE;

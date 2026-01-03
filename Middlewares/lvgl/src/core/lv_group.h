@@ -35,6 +35,7 @@ typedef enum {
     LV_KEY_PREV      = 11,  /*0x0B, '*/
     LV_KEY_HOME      = 2,   /*0x02, STX*/
     LV_KEY_END       = 3,   /*0x03, ETX*/
+	USE_ENCODER_SW	 = 0x100,	//엔코더 푸쉬 스위치
 } lv_key_t;
 
 /**********************

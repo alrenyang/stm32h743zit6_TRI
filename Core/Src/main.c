@@ -1091,7 +1091,7 @@ void StartDefaultTask(void const * argument)
 
   LCD_ShowLogo();
   SCB_CleanDCache_by_Addr((uint32_t *)FrameBuffer, LCD_WIDTH * LCD_HEIGHT * 2); // 2 bytes per pixel
-  osDelay(500);
+  osDelay(1000);
 
   lv_init();	//lvgl init
   lv_port_disp_init();	//display init
