@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/data_it.c \
 ../Core/Src/freertos.c \
+../Core/Src/hw.c \
 ../Core/Src/key_input.c \
 ../Core/Src/lcd.c \
 ../Core/Src/lcd_fonts.c \
 ../Core/Src/lv_port_disp.c \
 ../Core/Src/lv_port_indev.c \
 ../Core/Src/main.c \
+../Core/Src/sdram.c \
 ../Core/Src/stm32h7xx_hal_msp.c \
 ../Core/Src/stm32h7xx_hal_timebase_tim.c \
 ../Core/Src/stm32h7xx_it.c \
@@ -24,13 +27,16 @@ C_SRCS += \
 ../Core/Src/widgets_style.c 
 
 OBJS += \
+./Core/Src/data_it.o \
 ./Core/Src/freertos.o \
+./Core/Src/hw.o \
 ./Core/Src/key_input.o \
 ./Core/Src/lcd.o \
 ./Core/Src/lcd_fonts.o \
 ./Core/Src/lv_port_disp.o \
 ./Core/Src/lv_port_indev.o \
 ./Core/Src/main.o \
+./Core/Src/sdram.o \
 ./Core/Src/stm32h7xx_hal_msp.o \
 ./Core/Src/stm32h7xx_hal_timebase_tim.o \
 ./Core/Src/stm32h7xx_it.o \
@@ -43,13 +49,16 @@ OBJS += \
 ./Core/Src/widgets_style.o 
 
 C_DEPS += \
+./Core/Src/data_it.d \
 ./Core/Src/freertos.d \
+./Core/Src/hw.d \
 ./Core/Src/key_input.d \
 ./Core/Src/lcd.d \
 ./Core/Src/lcd_fonts.d \
 ./Core/Src/lv_port_disp.d \
 ./Core/Src/lv_port_indev.d \
 ./Core/Src/main.d \
+./Core/Src/sdram.d \
 ./Core/Src/stm32h7xx_hal_msp.d \
 ./Core/Src/stm32h7xx_hal_timebase_tim.d \
 ./Core/Src/stm32h7xx_it.d \
@@ -69,7 +78,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/key_input.cyclo ./Core/Src/key_input.d ./Core/Src/key_input.o ./Core/Src/key_input.su ./Core/Src/lcd.cyclo ./Core/Src/lcd.d ./Core/Src/lcd.o ./Core/Src/lcd.su ./Core/Src/lcd_fonts.cyclo ./Core/Src/lcd_fonts.d ./Core/Src/lcd_fonts.o ./Core/Src/lcd_fonts.su ./Core/Src/lv_port_disp.cyclo ./Core/Src/lv_port_disp.d ./Core/Src/lv_port_disp.o ./Core/Src/lv_port_disp.su ./Core/Src/lv_port_indev.cyclo ./Core/Src/lv_port_indev.d ./Core/Src/lv_port_indev.o ./Core/Src/lv_port_indev.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_hal_timebase_tim.cyclo ./Core/Src/stm32h7xx_hal_timebase_tim.d ./Core/Src/stm32h7xx_hal_timebase_tim.o ./Core/Src/stm32h7xx_hal_timebase_tim.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32h7xx.cyclo ./Core/Src/system_stm32h7xx.d ./Core/Src/system_stm32h7xx.o ./Core/Src/system_stm32h7xx.su ./Core/Src/tcp_ip.cyclo ./Core/Src/tcp_ip.d ./Core/Src/tcp_ip.o ./Core/Src/tcp_ip.su ./Core/Src/tri_vision_logo_480x272_rgb565.cyclo ./Core/Src/tri_vision_logo_480x272_rgb565.d ./Core/Src/tri_vision_logo_480x272_rgb565.o ./Core/Src/tri_vision_logo_480x272_rgb565.su ./Core/Src/widgets.cyclo ./Core/Src/widgets.d ./Core/Src/widgets.o ./Core/Src/widgets.su ./Core/Src/widgets_style.cyclo ./Core/Src/widgets_style.d ./Core/Src/widgets_style.o ./Core/Src/widgets_style.su
+	-$(RM) ./Core/Src/data_it.cyclo ./Core/Src/data_it.d ./Core/Src/data_it.o ./Core/Src/data_it.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/hw.cyclo ./Core/Src/hw.d ./Core/Src/hw.o ./Core/Src/hw.su ./Core/Src/key_input.cyclo ./Core/Src/key_input.d ./Core/Src/key_input.o ./Core/Src/key_input.su ./Core/Src/lcd.cyclo ./Core/Src/lcd.d ./Core/Src/lcd.o ./Core/Src/lcd.su ./Core/Src/lcd_fonts.cyclo ./Core/Src/lcd_fonts.d ./Core/Src/lcd_fonts.o ./Core/Src/lcd_fonts.su ./Core/Src/lv_port_disp.cyclo ./Core/Src/lv_port_disp.d ./Core/Src/lv_port_disp.o ./Core/Src/lv_port_disp.su ./Core/Src/lv_port_indev.cyclo ./Core/Src/lv_port_indev.d ./Core/Src/lv_port_indev.o ./Core/Src/lv_port_indev.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/sdram.cyclo ./Core/Src/sdram.d ./Core/Src/sdram.o ./Core/Src/sdram.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_hal_timebase_tim.cyclo ./Core/Src/stm32h7xx_hal_timebase_tim.d ./Core/Src/stm32h7xx_hal_timebase_tim.o ./Core/Src/stm32h7xx_hal_timebase_tim.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32h7xx.cyclo ./Core/Src/system_stm32h7xx.d ./Core/Src/system_stm32h7xx.o ./Core/Src/system_stm32h7xx.su ./Core/Src/tcp_ip.cyclo ./Core/Src/tcp_ip.d ./Core/Src/tcp_ip.o ./Core/Src/tcp_ip.su ./Core/Src/tri_vision_logo_480x272_rgb565.cyclo ./Core/Src/tri_vision_logo_480x272_rgb565.d ./Core/Src/tri_vision_logo_480x272_rgb565.o ./Core/Src/tri_vision_logo_480x272_rgb565.su ./Core/Src/widgets.cyclo ./Core/Src/widgets.d ./Core/Src/widgets.o ./Core/Src/widgets.su ./Core/Src/widgets_style.cyclo ./Core/Src/widgets_style.d ./Core/Src/widgets_style.o ./Core/Src/widgets_style.su
 
 .PHONY: clean-Core-2f-Src
 

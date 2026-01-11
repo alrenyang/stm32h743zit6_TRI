@@ -429,6 +429,7 @@ Core/Src/widgets.o: ../Core/Src/widgets.c ../Core/Src/widgets.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v8.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v9_0.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v9_1.h \
+ /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/misc/lv_types.h \
  ../Core/Src/lv_port_indev.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h \
  ../Core/Src/key_input.h \
@@ -470,7 +471,8 @@ Core/Src/widgets.o: ../Core/Src/widgets.c ../Core/Src/widgets.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
- ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+ ../Core/Src/data_it.h
 ../Core/Src/widgets.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lv_version.h:
@@ -902,6 +904,7 @@ Core/Src/widgets.o: ../Core/Src/widgets.c ../Core/Src/widgets.h \
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v8.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v9_0.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v9_1.h:
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/misc/lv_types.h:
 ../Core/Src/lv_port_indev.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h:
 ../Core/Src/key_input.h:
@@ -944,3 +947,4 @@ Core/Src/widgets.o: ../Core/Src/widgets.c ../Core/Src/widgets.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
+../Core/Src/data_it.h:

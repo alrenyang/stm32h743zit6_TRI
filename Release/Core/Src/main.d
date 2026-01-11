@@ -90,6 +90,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/system/arch/sys_arch.h \
  ../LWIP/Target/ethernetif.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h \
+ ../Core/Src/tcp_ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpbase.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
+ ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
+ ../Core/Src/lcd.h ../Core/Src/tri_vision_logo_480x272_rgb565.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/lvgl.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/lv_version.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/src/lv_init.h \
@@ -522,16 +531,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/src/lv_api_map_v9_1.h \
  ../Core/Src/lv_port_disp.h ../Core/Src/lv_port_indev.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpbase.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
- ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h \
- ../Core/Src/tcp_ip.h ../Core/Src/lcd.h \
- ../Core/Src/tri_vision_logo_480x272_rgb565.h ../Core/Src/widgets.h \
- /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h
+ ../Core/Src/com_define.h ../Core/Src/sdram.h ../Core/Src/widgets.h \
+ /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h \
+ /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/misc/lv_types.h \
+ ../Core/Src/hw.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -624,6 +627,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/LwIP/system/arch/sys_arch.h:
 ../LWIP/Target/ethernetif.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/tcpip.h:
+../Core/Src/tcp_ip.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/tcpbase.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h:
+../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:
+../Core/Src/lcd.h:
+../Core/Src/tri_vision_logo_480x272_rgb565.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/lvgl.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/lv_version.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/../Middlewares/lvgl/src/lv_init.h:
@@ -1057,15 +1070,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/lv_port_disp.h:
 ../Core/Src/lv_port_indev.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/tcpbase.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/ip.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/ip6.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h:
-../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:
-../Core/Src/tcp_ip.h:
-../Core/Src/lcd.h:
-../Core/Src/tri_vision_logo_480x272_rgb565.h:
+../Core/Src/com_define.h:
+../Core/Src/sdram.h:
 ../Core/Src/widgets.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h:
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/misc/lv_types.h:
+../Core/Src/hw.h:

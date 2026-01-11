@@ -1,11 +1,5 @@
-../Core/Src/main.c:1064:6:StartDefaultTask	24	static,ignoring_inline_asm
-../Core/Src/main.c:121:6:LCD_DrawColorBar	16	static,ignoring_inline_asm
-../Core/Src/main.c:147:6:LCD_TestHorizontalBars	8	static,ignoring_inline_asm
-../Core/Src/main.c:162:6:Draw_Screen	8	static,ignoring_inline_asm
-../Core/Src/main.c:173:6:sdram_test	24	static,ignoring_inline_asm
-../Core/Src/main.c:284:6:SDRAM_VerifyFrameBuffer	48	static
-../Core/Src/main.c:311:6:SDRAM_AddressAliasingTest	16	static,ignoring_inline_asm
-../Core/Src/main.c:496:6:SystemClock_Config	120	static,ignoring_inline_asm
-../Core/Src/main.c:366:5:main	296	static,ignoring_inline_asm
-../Core/Src/main.c:1212:6:HAL_TIM_PeriodElapsedCallback	0	static
-../Core/Src/main.c:1230:6:Error_Handler	0	static,ignoring_inline_asm
+../Core/Src/main.c:727:6:StartDefaultTask	24	static,ignoring_inline_asm
+../Core/Src/main.c:209:6:SystemClock_Config	120	static,ignoring_inline_asm
+../Core/Src/main.c:108:5:main	104	static,ignoring_inline_asm
+../Core/Src/main.c:862:6:HAL_TIM_PeriodElapsedCallback	0	static
+../Core/Src/main.c:880:6:Error_Handler	0	static,ignoring_inline_asm

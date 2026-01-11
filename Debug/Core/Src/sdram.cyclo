@@ -1,0 +1,2 @@
+../Core/Src/sdram.c:4:10:FMC_GetKernelClock_Hz	1
+../Core/Src/sdram.c:18:10:SDRAM_RefreshCount_IS42S16400J	2
