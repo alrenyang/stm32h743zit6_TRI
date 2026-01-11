@@ -201,7 +201,7 @@ main-build: stm32h743zit6.elf secondary-outputs
 
 # Tool invocations
 stm32h743zit6.elf stm32h743zit6.map: $(OBJS) $(USER_OBJS) /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/STM32H743ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32h743zit6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32h743zit6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "stm32h743zit6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32h743zit6.map" -Wl,--gc-sections -static -Wl,-z,noexecstack --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

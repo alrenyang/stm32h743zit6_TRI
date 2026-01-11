@@ -1,6 +1,10 @@
-../Core/Src/lcd.c:24:6:lcdPrintf	4
-../Core/Src/lcd.c:92:6:disEngFont	4
-../Core/Src/lcd.c:111:25:lcdDrawPixel	3
-../Core/Src/lcd.c:131:6:lcdSetFrameBuffer	1
-../Core/Src/lcd.c:136:11:lcdGetFrameBuffer	1
-../Core/Src/lcd.c:141:6:LCD_ShowLogo	1
+../Core/Src/lcd.c:35:6:lcdPrintf	4
+../Core/Src/lcd.c:103:6:disEngFont	4
+../Core/Src/lcd.c:122:25:lcdDrawPixel	3
+../Core/Src/lcd.c:142:6:lcdSetFrameBuffer	1
+../Core/Src/lcd.c:147:11:lcdGetFrameBuffer	1
+../Core/Src/lcd.c:152:6:LCD_ShowLogo	1
+../Core/Src/lcd.c:160:6:lcdRegisterVsyncCallback	1
+../Core/Src/lcd.c:165:6:lcdUpdateDraw	5
+../Core/Src/lcd.c:187:6:lcdEnableVsyncLineInterrupt	1
+../Core/Src/lcd.c:198:6:HAL_LTDC_LineEventCallback	2

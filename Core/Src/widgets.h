@@ -2,6 +2,7 @@
 #define WIDGETS_H
 
 #include "lvgl.h"
+#include "src/misc/lv_types.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,12 +15,20 @@ extern "C" {
 
 #define TBL_COLS 5
 
-typedef struct {
-    uint16_t on;     /* us (e.g. 1~1000) */
-    uint16_t delay;  /* us (e.g. 0~10000) */
-    uint16_t block;  /* us (e.g. 0~10000) */
-    char     trg;    /* 'F' / 'R' / 'B' */
-} ch_data_t;
+typedef enum {
+    CH_F_ON = 0,
+    CH_F_DELAY,
+    CH_F_BLOCK,
+    CH_F_TRG,
+} ch_field_t;
+
+#define ON_MIN      1
+#define ON_MAX      9999
+#define DELAY_MIN   0
+#define DELAY_MAX   9999
+#define BLOCK_MIN   0
+#define BLOCK_MAX   9999
+
 
 typedef struct {
     lv_obj_t * scr;
@@ -60,7 +69,7 @@ typedef struct {
     lv_obj_t *** tbl_cell_lbl; /* [ch_count][5] */
 
     uint16_t   ch_count;       /* current channel count */
-    ch_data_t * ch_data;       /* array length ch_count */
+    // ch_data_t * ch_data;       /* array length ch_count */
 
     /* modal group */
     lv_group_t * ch_grp_prev;
@@ -71,6 +80,8 @@ typedef struct {
     lv_obj_t * ch_item_btn[4];
     lv_obj_t * ch_item_val[4];
     lv_obj_t * ch_title;     /* "CHxx" 표시용 라벨 */
+
+    lv_timer_t * hotkey_timer;  //글로벌 키 타이머
 
 } ui_strobe_t;
 

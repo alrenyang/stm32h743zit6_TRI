@@ -1,0 +1,3 @@
+../Core/Src/data_it.c:28:6:update_ch_data	4	static
+../Core/Src/data_it.c:33:6:data_it_on_close_apply	16	static
+../Core/Src/data_it.c:40:6:data_it_save_to_flash	4	static

@@ -1,0 +1,11 @@
+../Core/Src/key_input.c:61:13:q_push	24	static
+../Core/Src/key_input.c:69:6:KeyInput_GetEvent	16	static
+../Core/Src/key_input.c:77:23:read_pressed	16	static
+../Core/Src/key_input.c:82:23:read_key	16	static
+../Core/Src/key_input.c:88:13:push_tick_one	32	static
+../Core/Src/key_input.c:131:6:KeyInput_IsPressed	16	static
+../Core/Src/key_input.c:152:13:rotary_tick	16	static
+../Core/Src/key_input.c:179:9:KeyInput_EncoderGetDiffAndClear	24	static,ignoring_inline_asm
+../Core/Src/key_input.c:193:6:KeyInput_EncoderIsPressed	8	static
+../Core/Src/key_input.c:199:6:KeyInput_Init	32	static
+../Core/Src/key_input.c:221:6:KeyInput_Tick	24	static
