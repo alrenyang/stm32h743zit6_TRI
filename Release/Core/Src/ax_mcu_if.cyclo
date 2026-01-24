@@ -1,0 +1,14 @@
+../Core/Src/ax_mcu_if.c:170:6:mcu_set_fcs.part.0	1
+../Core/Src/ax_mcu_if.c:188:6:mcu_set_ale.part.0	1
+../Core/Src/ax_mcu_if.c:12:6:mcu_set_dout	1
+../Core/Src/ax_mcu_if.c:53:6:mcu_set_din	1
+../Core/Src/ax_mcu_if.c:92:6:mcu_set_data16	17
+../Core/Src/ax_mcu_if.c:146:10:mcu_get_data16	16
+../Core/Src/ax_mcu_if.c:170:6:mcu_set_fcs	2
+../Core/Src/ax_mcu_if.c:176:6:mcu_set_wen	2
+../Core/Src/ax_mcu_if.c:182:6:mcu_set_ren	2
+../Core/Src/ax_mcu_if.c:188:6:mcu_set_ale	2
+../Core/Src/ax_mcu_if.c:195:6:mcu_write16	1
+../Core/Src/ax_mcu_if.c:215:10:mcu_read16	1
+../Core/Src/ax_mcu_if.c:241:6:mcu_write_channel_con	1
+../Core/Src/ax_mcu_if.c:249:6:mcu_read_channel_con	1

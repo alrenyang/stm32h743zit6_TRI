@@ -5,7 +5,7 @@ Middlewares/lvgl/src/indev/lv_indev.o: \
  ../Middlewares/lvgl/src/indev/../core/lv_group.h \
  ../Middlewares/lvgl/src/indev/../core/../lv_conf_internal.h \
  ../Middlewares/lvgl/src/indev/../core/../lv_conf_kconfig.h \
- /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h \
+ D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h \
  ../Middlewares/lvgl/src/indev/../core/../misc/lv_types.h \
  ../Middlewares/lvgl/src/indev/../core/../misc/../lv_conf_internal.h \
  ../Middlewares/lvgl/src/indev/../core/../misc/lv_ll.h \
@@ -217,7 +217,7 @@ Middlewares/lvgl/src/indev/lv_indev.o: \
 ../Middlewares/lvgl/src/indev/../core/lv_group.h:
 ../Middlewares/lvgl/src/indev/../core/../lv_conf_internal.h:
 ../Middlewares/lvgl/src/indev/../core/../lv_conf_kconfig.h:
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h:
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h:
 ../Middlewares/lvgl/src/indev/../core/../misc/lv_types.h:
 ../Middlewares/lvgl/src/indev/../core/../misc/../lv_conf_internal.h:
 ../Middlewares/lvgl/src/indev/../core/../misc/lv_ll.h:

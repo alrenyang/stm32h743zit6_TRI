@@ -36,6 +36,15 @@
 #include "sdram.h"
 #include "widgets.h"
 #include "hw.h"
+#include <stdio.h>
+#include "user_def.h"
+#include "ax_uart2.h"
+#include "packet_task.h"
+#include "ax_mcu_if.h"
+#include "ax_eeprom.h"
+#include "reg_addr.h"
+#include "ax_eeprom_task.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -159,6 +168,29 @@ int main(void)
   HAL_Delay(250); // Datasheet: Wait T2 (250ms min) after DISP High before turning on Backlight
   HAL_GPIO_WritePin(GPIOA, LCD_BAK_Pin, GPIO_PIN_SET);	//LCD Backlight Enable
 
+
+  packet_init();
+  HAL_Delay(1000);
+
+  setvbuf(stdout, NULL, _IONBF, 0); // No buffering
+
+  printf("\r\n\r\n App Start 2025. 12. 10b \r\n");
+  uart2_puts("\r\n\r\n [Debug] App Start 2025. 12. 10b \r\n");
+
+//  HAL_UART_Receive_IT(&huart1, (uint8_t*) &rx1_data, 1);
+//  HAL_UART_Receive_IT(&huart2, (uint8_t*) &rx2_data, 1);
+  HAL_Delay(100);
+
+  // -----------------------------------------------------------------------------
+  // power on, eeprom 에서 데이터를 읽어옴.
+  eeprom_load_sys();					// load sys data from eeprom
+  load_user_param(g_user_default);		// load trig_mode param from eeprom
+  eeprom_load_page_all();				// load sequence mode param from eeprom
+
+  mcu_write16(rSTROBE_EN, 0xffff);		// fpga write, strobe_enable
+  mcu_write16(rSTROBE_EN, 0xffff);
+  uart2_puts_16h("\r\n rSTROBE_EN : 0x", mcu_read16(rSTROBE_EN));
+
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -179,7 +211,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of MainTask */
-  osThreadDef(MainTask, StartDefaultTask, osPriorityNormal, 0, 2048);
+  osThreadDef(MainTask, StartDefaultTask, osPriorityNormal, 0, 256);
   MainTaskHandle = osThreadCreate(osThread(MainTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -394,7 +426,7 @@ static void MX_LTDC_Init(void)
   pLayerCfg.Alpha0 = 255;
   pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
   pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
-  pLayerCfg.FBStartAdress = LCD_ST_ADDR;
+  pLayerCfg.FBStartAdress = 0xC0000000;
   pLayerCfg.ImageWidth = 480;
   pLayerCfg.ImageHeight = 272;
   pLayerCfg.Backcolor.Blue = 0;
@@ -648,23 +680,63 @@ static void MX_GPIO_Init(void)
   /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, F_DATA0_Pin|F_DATA1_Pin|F_DATA2_Pin|F_DATA3_Pin
+                          |F_DATA4_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, F_DATA5_Pin|F_DATA6_Pin|F_DATA7_Pin|GPIO_PIN_8
+                          |GPIO_PIN_12, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOF, F_DATA8_Pin|F_DATA9_Pin|F_DATA10_Pin|F_DATA11_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LCD_BAK_GPIO_Port, LCD_BAK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8|GPIO_PIN_12, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, F_DATA12_Pin|F_DATA13_Pin|F_DATA14_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_12, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(F_DATA15_GPIO_Port, F_DATA15_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOG, F_CS_Pin|F_WR_Pin|F_RD_Pin|F_ALE_Pin
+                          |HEART_BEAT_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : F_DATA0_Pin F_DATA1_Pin F_DATA2_Pin F_DATA3_Pin
+                           F_DATA4_Pin */
+  GPIO_InitStruct.Pin = F_DATA0_Pin|F_DATA1_Pin|F_DATA2_Pin|F_DATA3_Pin
+                          |F_DATA4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : F_DATA5_Pin F_DATA6_Pin F_DATA7_Pin PC8
+                           PC12 */
+  GPIO_InitStruct.Pin = F_DATA5_Pin|F_DATA6_Pin|F_DATA7_Pin|GPIO_PIN_8
+                          |GPIO_PIN_12;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : F_DATA8_Pin F_DATA9_Pin F_DATA10_Pin F_DATA11_Pin */
+  GPIO_InitStruct.Pin = F_DATA8_Pin|F_DATA9_Pin|F_DATA10_Pin|F_DATA11_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
   /*Configure GPIO pin : LCD_BAK_Pin */
   GPIO_InitStruct.Pin = LCD_BAK_Pin;
@@ -679,12 +751,28 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PC8 PC12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_12;
+  /*Configure GPIO pins : F_DATA12_Pin F_DATA13_Pin F_DATA14_Pin */
+  GPIO_InitStruct.Pin = F_DATA12_Pin|F_DATA13_Pin|F_DATA14_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : F_DATA15_Pin */
+  GPIO_InitStruct.Pin = F_DATA15_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(F_DATA15_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : F_CS_Pin F_WR_Pin F_RD_Pin F_ALE_Pin
+                           HEART_BEAT_Pin */
+  GPIO_InitStruct.Pin = F_CS_Pin|F_WR_Pin|F_RD_Pin|F_ALE_Pin
+                          |HEART_BEAT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
   /*Configure GPIO pins : KEY_DATA0_Pin KEY_DATA1_Pin KEY_DATA2_Pin */
   GPIO_InitStruct.Pin = KEY_DATA0_Pin|KEY_DATA1_Pin|KEY_DATA2_Pin;
@@ -697,13 +785,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PG12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_12;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
   /*AnalogSwitch Config */
   HAL_SYSCFG_AnalogSwitchConfig(SYSCFG_SWITCH_PA0, SYSCFG_SWITCH_PA0_CLOSE);

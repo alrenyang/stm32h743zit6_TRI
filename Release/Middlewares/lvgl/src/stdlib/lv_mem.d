@@ -4,7 +4,7 @@ Middlewares/lvgl/src/stdlib/lv_mem.o: \
  ../Middlewares/lvgl/src/stdlib/lv_mem.h \
  ../Middlewares/lvgl/src/stdlib/../lv_conf_internal.h \
  ../Middlewares/lvgl/src/stdlib/../lv_conf_kconfig.h \
- /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h \
+ D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h \
  ../Middlewares/lvgl/src/stdlib/lv_string.h \
  ../Middlewares/lvgl/src/stdlib/../misc/lv_types.h \
  ../Middlewares/lvgl/src/stdlib/../misc/../lv_conf_internal.h \
@@ -210,7 +210,7 @@ Middlewares/lvgl/src/stdlib/lv_mem.o: \
 ../Middlewares/lvgl/src/stdlib/lv_mem.h:
 ../Middlewares/lvgl/src/stdlib/../lv_conf_internal.h:
 ../Middlewares/lvgl/src/stdlib/../lv_conf_kconfig.h:
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h:
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h:
 ../Middlewares/lvgl/src/stdlib/lv_string.h:
 ../Middlewares/lvgl/src/stdlib/../misc/lv_types.h:
 ../Middlewares/lvgl/src/stdlib/../misc/../lv_conf_internal.h:

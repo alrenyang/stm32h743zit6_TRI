@@ -1,14 +1,14 @@
 ../Core/Src/widgets.c:299:13:ch_panel_refresh	40	static
 ../Core/Src/widgets.c:374:13:CHPannel_close	16	static
 ../Core/Src/widgets.c:610:13:hotkey_poll_cb	8	static
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/../misc/lv_style.h:531:20:lv_style_set_pad_all	16	static
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lvgl/src/core/../misc/lv_style.h:531:20:lv_style_set_pad_all	16	static
 ../Core/Src/widgets.c:410:13:CHPannel_mask_event_cb	16	static
 ../Core/Src/widgets.c:719:19:make_btn	16	static
 ../Core/Src/widgets.c:353:13:ch_item_event_cb	16	static
 ../Core/Src/widgets.c:420:13:CHPannel_close_btn_cb	16	static
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/lv_api_map_v8.h:86:20:lv_obj_move_foreground	8	static
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lvgl/src/lv_api_map_v8.h:86:20:lv_obj_move_foreground	8	static
 ../Core/Src/widgets.c:919:13:encoder_group_rebuild	16	static
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/lv_obj_style.h:196:20:lv_obj_set_style_pad_all.constprop	16	static
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lvgl/src/core/lv_obj_style.h:196:20:lv_obj_set_style_pad_all.constprop	16	static
 ../Core/Src/widgets.c:708:19:make_tag.constprop.isra	16	static
 ../Core/Src/widgets.c:736:19:table_cell_label.isra	32	static
 ../Core/Src/widgets.c:318:19:ch_make_item.isra	40	static

@@ -140,7 +140,6 @@ osSemaphoreId TxPktSemaphore = NULL;   /* Semaphore to signal transmit packet co
 
 /* Global Ethernet handle */
 ETH_HandleTypeDef heth;
-
 ETH_TxPacketConfig TxConfig;
 
 /* Private function prototypes -----------------------------------------------*/
@@ -649,28 +648,28 @@ void HAL_ETH_MspInit(ETH_HandleTypeDef* ethHandle)
     GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_4|GPIO_PIN_5;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
     GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     GPIO_InitStruct.Pin = GPIO_PIN_13;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_13;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
     HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
@@ -824,6 +823,7 @@ void ethernet_link_thread(void const * argument)
   }
   else if(!netif_is_link_up(netif) && (PHYLinkState > LAN8742_STATUS_LINK_DOWN))
   {
+
     switch (PHYLinkState)
     {
     case LAN8742_STATUS_100MBITS_FULLDUPLEX:
@@ -945,3 +945,4 @@ void HAL_ETH_TxFreeCallback(uint32_t * buff)
 /* USER CODE BEGIN 8 */
 
 /* USER CODE END 8 */
+

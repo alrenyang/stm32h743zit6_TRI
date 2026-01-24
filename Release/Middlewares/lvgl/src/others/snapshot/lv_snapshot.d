@@ -4,7 +4,7 @@ Middlewares/lvgl/src/others/snapshot/lv_snapshot.o: \
  ../Middlewares/lvgl/src/others/snapshot/../../draw/lv_draw.h \
  ../Middlewares/lvgl/src/others/snapshot/../../draw/../lv_conf_internal.h \
  ../Middlewares/lvgl/src/others/snapshot/../../draw/../lv_conf_kconfig.h \
- /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h \
+ D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h \
  ../Middlewares/lvgl/src/others/snapshot/../../draw/../misc/lv_types.h \
  ../Middlewares/lvgl/src/others/snapshot/../../draw/../misc/../lv_conf_internal.h \
  ../Middlewares/lvgl/src/others/snapshot/../../draw/../misc/lv_style.h \
@@ -142,7 +142,7 @@ Middlewares/lvgl/src/others/snapshot/lv_snapshot.o: \
 ../Middlewares/lvgl/src/others/snapshot/../../draw/lv_draw.h:
 ../Middlewares/lvgl/src/others/snapshot/../../draw/../lv_conf_internal.h:
 ../Middlewares/lvgl/src/others/snapshot/../../draw/../lv_conf_kconfig.h:
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h:
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h:
 ../Middlewares/lvgl/src/others/snapshot/../../draw/../misc/lv_types.h:
 ../Middlewares/lvgl/src/others/snapshot/../../draw/../misc/../lv_conf_internal.h:
 ../Middlewares/lvgl/src/others/snapshot/../../draw/../misc/lv_style.h:

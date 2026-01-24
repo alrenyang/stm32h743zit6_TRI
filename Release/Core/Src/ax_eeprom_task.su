@@ -1,0 +1,6 @@
+../Core/Src/ax_eeprom_task.c:16:6:eeprom_save_sys	48	static
+../Core/Src/ax_eeprom_task.c:50:6:eeprom_load_sys	48	static
+../Core/Src/ax_eeprom_task.c:101:6:eeprom_save_user	16	static
+../Core/Src/ax_eeprom_task.c:113:6:eeprom_load_user	160	static
+../Core/Src/ax_eeprom_task.c:161:6:eeprom_load_page	32	static
+../Core/Src/ax_eeprom_task.c:194:6:eeprom_load_page_all	8	static

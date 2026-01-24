@@ -1,0 +1,13 @@
+../Core/Src/ax_uart2.c:15:6:uart2_putc	1
+../Core/Src/ax_uart2.c:24:6:uart2_puts	2
+../Core/Src/ax_uart2.c:29:6:uart2_i2h	3
+../Core/Src/ax_uart2.c:40:6:uart2_i2d	2
+../Core/Src/ax_uart2.c:51:6:uart2_puts_8h	1
+../Core/Src/ax_uart2.c:58:6:uart2_puts_16h	1
+../Core/Src/ax_uart2.c:68:6:uart2_puts_8d	3
+../Core/Src/ax_uart2.c:87:6:uart2_puts_16d	7
+../Core/Src/ax_uart2.c:116:6:uart2_putsn	1
+../Core/Src/ax_uart2.c:123:6:uart2_puts_8hn	1
+../Core/Src/ax_uart2.c:129:6:uart2_puts_16hn	1
+../Core/Src/ax_uart2.c:135:6:uart2_puts_8dn	1
+../Core/Src/ax_uart2.c:141:6:uart2_puts_16dn	1

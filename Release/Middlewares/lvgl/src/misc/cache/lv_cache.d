@@ -4,7 +4,7 @@ Middlewares/lvgl/src/misc/cache/lv_cache.o: \
  ../Middlewares/lvgl/src/misc/cache/../lv_types.h \
  ../Middlewares/lvgl/src/misc/cache/../../lv_conf_internal.h \
  ../Middlewares/lvgl/src/misc/cache/../../lv_conf_kconfig.h \
- /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h \
+ D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h \
  ../Middlewares/lvgl/src/misc/cache/lv_cache_entry.h \
  ../Middlewares/lvgl/src/misc/cache/class/lv_cache_class.h \
  ../Middlewares/lvgl/src/misc/cache/class/lv_cache_lru_rb.h \
@@ -35,7 +35,7 @@ Middlewares/lvgl/src/misc/cache/lv_cache.o: \
 ../Middlewares/lvgl/src/misc/cache/../lv_types.h:
 ../Middlewares/lvgl/src/misc/cache/../../lv_conf_internal.h:
 ../Middlewares/lvgl/src/misc/cache/../../lv_conf_kconfig.h:
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h:
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h:
 ../Middlewares/lvgl/src/misc/cache/lv_cache_entry.h:
 ../Middlewares/lvgl/src/misc/cache/class/lv_cache_class.h:
 ../Middlewares/lvgl/src/misc/cache/class/lv_cache_lru_rb.h:

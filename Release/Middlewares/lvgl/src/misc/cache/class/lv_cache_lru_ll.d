@@ -5,7 +5,7 @@ Middlewares/lvgl/src/misc/cache/class/lv_cache_lru_ll.o: \
  ../Middlewares/lvgl/src/misc/cache/class/../../lv_types.h \
  ../Middlewares/lvgl/src/misc/cache/class/../../../lv_conf_internal.h \
  ../Middlewares/lvgl/src/misc/cache/class/../../../lv_conf_kconfig.h \
- /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h \
+ D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h \
  ../Middlewares/lvgl/src/misc/cache/class/../../../osal/lv_os.h \
  ../Middlewares/lvgl/src/misc/cache/class/../../../osal/../lv_conf_internal.h \
  ../Middlewares/lvgl/src/misc/cache/class/../../../osal/../misc/lv_types.h \
@@ -27,7 +27,7 @@ Middlewares/lvgl/src/misc/cache/class/lv_cache_lru_ll.o: \
 ../Middlewares/lvgl/src/misc/cache/class/../../lv_types.h:
 ../Middlewares/lvgl/src/misc/cache/class/../../../lv_conf_internal.h:
 ../Middlewares/lvgl/src/misc/cache/class/../../../lv_conf_kconfig.h:
-/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lv_conf.h:
+D:/proj_triv/work2/stm32h743zit6_TRI-main/Middlewares/lv_conf.h:
 ../Middlewares/lvgl/src/misc/cache/class/../../../osal/lv_os.h:
 ../Middlewares/lvgl/src/misc/cache/class/../../../osal/../lv_conf_internal.h:
 ../Middlewares/lvgl/src/misc/cache/class/../../../osal/../misc/lv_types.h:

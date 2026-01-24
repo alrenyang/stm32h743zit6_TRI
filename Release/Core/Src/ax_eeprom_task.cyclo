@@ -1,0 +1,6 @@
+../Core/Src/ax_eeprom_task.c:16:6:eeprom_save_sys	2
+../Core/Src/ax_eeprom_task.c:50:6:eeprom_load_sys	2
+../Core/Src/ax_eeprom_task.c:101:6:eeprom_save_user	2
+../Core/Src/ax_eeprom_task.c:113:6:eeprom_load_user	4
+../Core/Src/ax_eeprom_task.c:161:6:eeprom_load_page	3
+../Core/Src/ax_eeprom_task.c:194:6:eeprom_load_page_all	2
