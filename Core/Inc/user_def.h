@@ -12,7 +12,7 @@
 
 #define		UART2_DEBUG_ON			// level 0 debug on
 
-//#define		UART2_DEBUG_L2_ON		// level 2 debug on
+#define		UART2_DEBUG_L2_ON		// level 2 debug on
 
 
 #define		ax_VERSION		":FTS3-16CH Ver 1.0;"

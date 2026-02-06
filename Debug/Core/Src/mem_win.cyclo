@@ -1,0 +1,6 @@
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/lv_obj_style.h:196:20:lv_obj_set_style_pad_all	1
+../Core/Src/mem_win.c:3:6:Mem_window_close	7
+../Core/Src/mem_win.c:30:6:Mem_mask_event_cb	3
+../Core/Src/mem_win.c:39:6:Mem_window_open	7
+../Core/Src/mem_win.c:245:6:mem_close_event_cb	2
+../Core/Src/mem_win.c:255:6:mem_btn_event_cb	10

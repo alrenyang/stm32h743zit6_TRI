@@ -51,11 +51,11 @@ static lv_indev_t * indev_button;
 
 /* 하드웨어 버튼 ID(0..N-1) => 화면 좌표 매핑 */
 static const lv_point_t s_btn_points[] = {
-    { 12,  30 },   /* btn_id 0 : 예) KEY_DATA0 */
-    { 60,  90 },   /* btn_id 1 : 예) KEY_DATA1 */
-    {120,  90 },   /* btn_id 2 : 예) KEY_DATA2 */
-    {180,  90 },   /* btn_id 3 : 예) KEY_DATA3 */
-    {240,  90 },   /* btn_id 4 : 예) KEY_DATA4 */
+    // { 12,  30 },   /* btn_id 0 : 예) KEY_DATA0 */
+    // { 60,  90 },   /* btn_id 1 : 예) KEY_DATA1 */
+    // {120,  90 },   /* btn_id 2 : 예) KEY_DATA2 */
+    // {180,  90 },   /* btn_id 3 : 예) KEY_DATA3 */
+    // {240,  90 },   /* btn_id 4 : 예) KEY_DATA4 */
 };
 #define HW_BTN_COUNT  (sizeof(s_btn_points)/sizeof(s_btn_points[0]))
 
@@ -127,7 +127,7 @@ void lv_port_indev_init(void)
     lv_indev_set_read_cb(indev_button, button_read);
 
     /* 버튼 ID ↔ 화면 좌표 연결 */
-    lv_indev_set_button_points(indev_button, s_btn_points);
+    // lv_indev_set_button_points(indev_button, s_btn_points);
 
 
 }
@@ -163,8 +163,8 @@ static user_key_map map_keyid_to_user(KeyId_t id)
     case KEY_DATA0:   return USE_KEY_SET;
     case KEY_DATA1:   return USE_KEY_MODE;
     case KEY_DATA2:   return USE_KEY_MEM;
-    case KEY_DATA3:   return USE_KEY_LOCK;
-    case KEY_DATA4:   return USE_KEY_INTER;
+    case KEY_DATA3:   return USE_KEY_INTER;
+    case KEY_LOCK:   return USE_KEY_LOCK;
 
     default:          return 0;
     }
@@ -220,8 +220,8 @@ static void keypad_read(lv_indev_t * indev, lv_indev_data_t * data)
             uint32_t k = map_keyid_to_user(ev.id);
             if(k == 0) k = map_keyid_to_user(ev.id);
             if (k != 0) {
-                if (k == USE_KEY_UP || k == USE_KEY_DOWN || k == USE_KEY_SET || k == USE_KEY_MODE ||
-                    k == USE_KEY_MEM || k == USE_KEY_LOCK || k == USE_KEY_INTER )
+                if (k == USE_KEY_UP || k == USE_KEY_DOWN || k == USE_KEY_SET || k == USE_KEY_MODE || 
+                    k == USE_KEY_MEM || k == USE_KEY_LOCK || k == USE_KEY_INTER ) 
                 {
                     g_hotkey = k;
                 }

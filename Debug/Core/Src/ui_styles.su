@@ -1,0 +1,4 @@
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/../misc/lv_style.h:539:20:lv_style_set_pad_hor	16	static
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/../misc/lv_style.h:545:20:lv_style_set_pad_ver	16	static
+../Core/Src/ui_styles.c:13:6:ui_styles_init	16	static
+../Core/Src/ui_styles.c:33:6:ui_styles_init_set_btn	32	static

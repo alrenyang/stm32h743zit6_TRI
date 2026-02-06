@@ -12,6 +12,99 @@
 #include "ax_mcu_if.h"
 #include "packet_task.h"
 
+void eeprom_test1(void)
+{
+	g_user_default = 0;
+	g_seq_con.start_page = 0;
+	g_seq_con.end_page = 7;
+	g_oper_mode = 0;
+
+	g_seq_con.repeat_page[0] = 1;
+	g_seq_con.repeat_page[1] = 1;
+	g_seq_con.repeat_page[2] = 1;
+	g_seq_con.repeat_page[3] = 1;
+	g_seq_con.repeat_page[4] = 1;
+	g_seq_con.repeat_page[5] = 1;
+	g_seq_con.repeat_page[6] = 1;
+	g_seq_con.repeat_page[7] = 1;
+
+
+	eeprom_save_sys();
+	eeprom_load_sys();
+
+}
+
+void eeprom_save_facotry(void)
+{
+	uint16_t addr;
+	uint16_t i, j;
+
+	// 1) user factory data
+	for(i=0; i<16; i++)
+	{
+		g_trig_con.ch_con[i].delay = 10;
+		g_trig_con.ch_con[i].on = 20;
+		g_trig_con.ch_con[i].block = 30;
+		g_trig_con.ch_con[i].trig_mode = 0;
+	}
+
+	// 2) save user data
+	for(j=0; j<4; j++)
+	{
+		addr = j*0x80;
+		for(i=0; i<16; i++)
+		{
+			eeprom_write_channel_con(addr+i*8, &g_trig_con.ch_con[i]);
+		}
+	}
+
+	// 3) page factory data
+	for(j=0; j<8; j++)
+	{
+		for(i=0; i<16; i++)
+		{
+			g_seq_con.page_con[j].ch_con[i].delay = 10;
+			g_seq_con.page_con[j].ch_con[i].on = 20;
+			g_seq_con.page_con[j].ch_con[i].block = 30;
+			g_seq_con.page_con[j].ch_con[i].trig_mode = 0;
+		}
+	}
+
+	// 4) save page data
+	for(j=0; j<8; j++)
+	{
+		addr = EEP_ADDR_PAGE0 + j*0x80;
+		for(i=0; i<16; i++)
+		{
+			eeprom_write_channel_con(addr + i*8, &g_seq_con.page_con[j].ch_con[i]);
+		}
+	}
+
+	// 5) system factory data
+	g_user_default = 0;
+	g_seq_con.start_page = 0;
+	g_seq_con.end_page = 7;
+	g_oper_mode = 0;
+
+	g_seq_con.repeat_page[0] = 1;
+	g_seq_con.repeat_page[1] = 1;
+	g_seq_con.repeat_page[2] = 1;
+	g_seq_con.repeat_page[3] = 1;
+	g_seq_con.repeat_page[4] = 1;
+	g_seq_con.repeat_page[5] = 1;
+	g_seq_con.repeat_page[6] = 1;
+	g_seq_con.repeat_page[7] = 1;
+
+	// 6) save system data
+	eeprom_save_sys();
+}
+
+void eeprom_load_factory(void)
+{
+
+}
+
+
 
 void eeprom_save_sys(void)
 {

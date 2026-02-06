@@ -10,6 +10,8 @@
 
 #include "main.h"
 
+void eeprom_test1(void);
+void eeprom_save_facotry(void);
 
 void eeprom_save_sys(void);
 void eeprom_load_sys(void);

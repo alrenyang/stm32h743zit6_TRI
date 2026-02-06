@@ -9,6 +9,7 @@
 #define INC_PACKET_TASK_H_
 
 #include "main.h"
+#include "user_def.h"
 
 void packet_init(void);
 int packet_rcv(uint8_t rdata);

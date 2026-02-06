@@ -44,7 +44,7 @@
 #include "ax_eeprom.h"
 #include "reg_addr.h"
 #include "ax_eeprom_task.h"
-
+#include "com_widget.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,6 +97,7 @@ void StartDefaultTask(void const * argument);
 uint8_t gete_way_ip[4] = {192,168,0,1};	//user set up
 uint8_t user_ip[4] = {192,168,0,50};
 uint16_t Port_No = 5001;
+uint32_t g_rs232_baud = 115200;
 
 volatile bool btcp_connect = false;
 
@@ -107,6 +108,7 @@ volatile bool g_tcp_new_data_flag = false;
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 
 /* USER CODE END 0 */
 
@@ -166,8 +168,7 @@ int main(void)
 
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_SET);	//DISP Control
   HAL_Delay(250); // Datasheet: Wait T2 (250ms min) after DISP High before turning on Backlight
-  HAL_GPIO_WritePin(GPIOA, LCD_BAK_Pin, GPIO_PIN_SET);	//LCD Backlight Enable
-
+  HAL_GPIO_WritePin(GPIOA, LCD_BAK_Pin, GPIO_PIN_RESET);	//LCD Backlight off
 
   packet_init();
   HAL_Delay(1000);
@@ -183,6 +184,13 @@ int main(void)
 
   // -----------------------------------------------------------------------------
   // power on, eeprom 에서 데이터를 읽어옴.
+  // g_oper_mode =  0; //트리거모드
+  // g_oper_mode =  1; //시퀀스모드
+  // default_value_init(); //기본 값
+  // eeprom_save_sys();
+
+  // eeprom_save_facotry();
+
   eeprom_load_sys();					// load sys data from eeprom
   load_user_param(g_user_default);		// load trig_mode param from eeprom
   eeprom_load_page_all();				// load sequence mode param from eeprom
@@ -211,7 +219,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of MainTask */
-  osThreadDef(MainTask, StartDefaultTask, osPriorityNormal, 0, 256);
+  osThreadDef(MainTask, StartDefaultTask, osPriorityNormal, 0, 2048);
   MainTaskHandle = osThreadCreate(osThread(MainTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -249,25 +257,22 @@ void SystemClock_Config(void)
 
   /** Configure the main internal regulator output voltage
   */
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE0);
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
 
   while(!__HAL_PWR_GET_FLAG(PWR_FLAG_VOSRDY)) {}
+
+  /** Macro to configure the PLL clock source
+  */
+  __HAL_RCC_PLL_PLLSOURCE_CONFIG(RCC_PLLSOURCE_HSE);
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLM = 5;
-  RCC_OscInitStruct.PLL.PLLN = 192;
-  RCC_OscInitStruct.PLL.PLLP = 2;
-  RCC_OscInitStruct.PLL.PLLQ = 2;
-  RCC_OscInitStruct.PLL.PLLR = 2;
-  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
-  RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
-  RCC_OscInitStruct.PLL.PLLFRACN = 0;
+  RCC_OscInitStruct.HSIState = RCC_HSI_DIV1;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -278,15 +283,15 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2
                               |RCC_CLOCKTYPE_D3PCLK1|RCC_CLOCKTYPE_D1PCLK1;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
   RCC_ClkInitStruct.SYSCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_HCLK_DIV2;
-  RCC_ClkInitStruct.APB3CLKDivider = RCC_APB3_DIV2;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB3CLKDivider = RCC_APB3_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_APB1_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_APB2_DIV2;
   RCC_ClkInitStruct.APB4CLKDivider = RCC_APB4_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -348,7 +353,7 @@ static void MX_I2C4_Init(void)
 
   /* USER CODE END I2C4_Init 1 */
   hi2c4.Instance = I2C4;
-  hi2c4.Init.Timing = 0x307075B1;
+  hi2c4.Init.Timing = 0x00707CBB;
   hi2c4.Init.OwnAddress1 = 0;
   hi2c4.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c4.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
@@ -426,7 +431,7 @@ static void MX_LTDC_Init(void)
   pLayerCfg.Alpha0 = 255;
   pLayerCfg.BlendingFactor1 = LTDC_BLENDING_FACTOR1_CA;
   pLayerCfg.BlendingFactor2 = LTDC_BLENDING_FACTOR2_CA;
-  pLayerCfg.FBStartAdress = 0xC0000000;
+  pLayerCfg.FBStartAdress = LCD_ST_ADDR;
   pLayerCfg.ImageWidth = 480;
   pLayerCfg.ImageHeight = 272;
   pLayerCfg.Backcolor.Blue = 0;
@@ -826,9 +831,14 @@ void StartDefaultTask(void const * argument)
   btcp_connect = tcp_server_init(Port_No);
   UNLOCK_TCPIP_CORE();
 
+  memset((void*)FrameBuffer, 0x00, LCD_WIDTH * LCD_HEIGHT * 2);
+  SCB_CleanDCache_by_Addr((uint32_t*)FrameBuffer, LCD_WIDTH * LCD_HEIGHT * 2);
+
   LCD_ShowLogo();
   SCB_CleanDCache_by_Addr((uint32_t *)FrameBuffer, LCD_WIDTH * LCD_HEIGHT * 2); // 2 bytes per pixel
-  osDelay(500);
+  // 로고 준비 끝났으면 백라이트 ON
+  HAL_GPIO_WritePin(GPIOA, LCD_BAK_Pin, GPIO_PIN_SET);
+  osDelay(2000);
 
   lv_init();	//lvgl init
   lv_port_disp_init();	//display init
@@ -861,7 +871,7 @@ void StartDefaultTask(void const * argument)
       }
     }
 
-    lv_tick_inc(1);
+    lv_tick_inc(2);
     lv_port_indev_poll_5ms();	//키 및 로터리 스캔
     lv_timer_handler();
 

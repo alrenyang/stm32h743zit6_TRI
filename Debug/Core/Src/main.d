@@ -534,7 +534,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/com_define.h ../Core/Src/sdram.h ../Core/Src/widgets.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h \
  /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/misc/lv_types.h \
- ../Core/Src/hw.h
+ ../Core/Src/com_widget.h ../Core/Inc/packet_task.h ../Core/Inc/main.h \
+ ../Core/Inc/user_def.h ../Core/Inc/ax_eeprom_task.h \
+ ../Core/Src/ui_styles.h ../Core/Src/key_input.h ../Core/Src/hw.h \
+ ../Core/Inc/user_def.h ../Core/Inc/ax_uart2.h ../Core/Inc/ax_mcu_if.h \
+ ../Core/Inc/ax_eeprom.h ../Core/Inc/reg_addr.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -1075,4 +1079,16 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/widgets.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/lvgl.h:
 /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/misc/lv_types.h:
+../Core/Src/com_widget.h:
+../Core/Inc/packet_task.h:
+../Core/Inc/main.h:
+../Core/Inc/user_def.h:
+../Core/Inc/ax_eeprom_task.h:
+../Core/Src/ui_styles.h:
+../Core/Src/key_input.h:
 ../Core/Src/hw.h:
+../Core/Inc/user_def.h:
+../Core/Inc/ax_uart2.h:
+../Core/Inc/ax_mcu_if.h:
+../Core/Inc/ax_eeprom.h:
+../Core/Inc/reg_addr.h:

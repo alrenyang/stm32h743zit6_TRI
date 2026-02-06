@@ -3,6 +3,7 @@
 
 #include "lvgl.h"
 #include "src/misc/lv_types.h"
+#include "com_widget.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,6 +13,10 @@ extern "C" {
 #ifndef UI_MAX_CH
 #define UI_MAX_CH 32
 #endif
+
+// #define MODE_MODE 0
+// #define MODE_CH  0
+#define MODE_SET    0
 
 #define TBL_COLS 5
 
@@ -29,6 +34,16 @@ typedef enum {
 #define BLOCK_MIN   0
 #define BLOCK_MAX   9999
 
+#define SLOT_MIN   0
+#define SLOT_MAX   7
+#define SLOT_CNT   (SLOT_MAX + 1)   // 8
+
+
+typedef struct {
+    lv_obj_t * btn;
+    lv_obj_t * lbl;
+    uint8_t    value;   // 0~255
+} ip_cell_t;
 
 typedef struct {
     lv_obj_t * scr;
@@ -48,6 +63,9 @@ typedef struct {
     lv_obj_t * lbl_interlock;
     lv_obj_t * lbl_comm;
 
+    lv_obj_t * int_str;
+    lv_obj_t * int_end;
+
     /* Main action buttons (footer) */
     lv_obj_t * btn_start;
     lv_obj_t * btn_stop;
@@ -62,7 +80,6 @@ typedef struct {
     /* Row containers (for encoder line-by-line focus) */
     lv_obj_t ** tbl_row;      /* [ch_count] */
     uint16_t   sel_row;       /* currently focused row (0-based) */
-
 
     /* Focusable cell buttons/labels (allocated at runtime) */
     lv_obj_t *** tbl_cell_btn; /* [ch_count][5] */
@@ -81,9 +98,74 @@ typedef struct {
     lv_obj_t * ch_item_val[4];
     lv_obj_t * ch_title;     /* "CHxx" 표시용 라벨 */
 
+    lv_obj_t * chk_save_all;    //체크박스 객체
+    bool       save_all;
+
     lv_timer_t * hotkey_timer;  //글로벌 키 타이머
 
+    /* MODE window */
+    lv_obj_t * MODE_mask;
+    lv_obj_t * MODE_panel;
+    lv_obj_t * MODE_btn_close;
+
+    lv_group_t * mode_grp;
+    lv_group_t * mode_grp_prev;
+
+    //SETTING window
+    lv_obj_t * SETTING_mask;
+    lv_obj_t * SETTING_panel;
+    lv_obj_t * SETTING_btn_close;
+
+    lv_group_t * grp_setting;   // 설정창 포커스 그룹(있으면)
+    lv_group_t * grp_setting_prev;
+
+    //INT window
+    lv_obj_t * INT_mask;
+    lv_obj_t * INT_panel;
+    lv_obj_t * INT_btn_close;
+
+    lv_group_t * INT_grp;
+    lv_group_t * INT_grp_prev;
+
+    //mem window
+    lv_obj_t * MEM_mask;
+    lv_obj_t * MEM_panel;
+    lv_obj_t * MEM_btn_close;
+
+    lv_group_t * MEM_grp;
+    lv_group_t * MEM_grp_prev;
+
+    lv_timer_t * mode_timer;   /* 필요 없으면 빼도 됨 */
+    uint8_t seq_page;   // 0~PAGE_MAX-1 (Sequence 모드에서 현재 페이지)
+
+    // ui_strobe_t 안에 추가(예시)
+    // lv_obj_t * dd_baud;
+    ip_cell_t ip_cell[4];
+    lv_obj_t * ip_dot[3];   // optional (점 라벨 포인터 저장)
+    lv_obj_t * btn_close;
+
+    lv_obj_t * baud_btn[3];
+    lv_obj_t * baud_lbl[3];
+    uint8_t    baud_idx;     // 0..2
+
+    // lv_obj_t * tag_ip;   // IP tag container
+    lv_obj_t * lbl_ip_info;
+    lv_obj_t * lbl_slot_info;
+
+    lv_obj_t * int_btn_pick[5];
+    lv_obj_t * int_btn_start;
+    lv_obj_t * int_btn_end;
+
+    uint8_t int_pick_target;   // 0=start, 1=end
+    uint8_t int_start_value;   // 1/2/4/6/8
+    uint8_t int_end_value;     // 1/2/4/6/8
+
+    lv_obj_t * int_btn_selected;   // 마지막으로 선택된 INT 버튼
+    uint8_t int_sel_idx;
+
 } ui_strobe_t;
+
+
 
 ui_strobe_t * widgets_create_strobe_screen(void);
 void widgets_bind_encoder(ui_strobe_t * ui, lv_indev_t * indev_encoder);
@@ -92,6 +174,15 @@ void widgets_bind_encoder(ui_strobe_t * ui, lv_indev_t * indev_encoder);
 void widgets_table_set_channel_count(ui_strobe_t * ui, uint16_t new_count);
 void widgets_table_set_cell(ui_strobe_t * ui, uint16_t ch0, uint16_t col, const char * txt);
 void table_format_cell(ui_strobe_t * ui, uint16_t row, uint16_t col);
+void widgets_update_ip_label(ui_strobe_t * ui);
+
+lv_obj_t * make_info_label(lv_obj_t * parent, const char * text);
+lv_obj_t * make_btn(lv_obj_t * parent, const char * title, bool primary);
+
+void widgets_table_refresh(ui_strobe_t * ui);
+
+st_trig_con * get_trigger_con(void);    //트리거모드 구조체 얻어옴.
+st_seq_con * get_sequence_con(void);    //시퀀스모드 구조체 얻어옴.
 
 
 #ifdef __cplusplus

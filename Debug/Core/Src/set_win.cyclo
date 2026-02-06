@@ -1,0 +1,8 @@
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/lv_obj_style.h:196:20:lv_obj_set_style_pad_all	1
+../Core/Src/set_win.c:12:6:baud_btn_event_cb	8
+../Core/Src/set_win.c:40:13:ip_apply_to_user_ip	2
+../Core/Src/set_win.c:45:6:ip_cell_event_cb	12
+../Core/Src/set_win.c:121:6:Setting_window_open	14
+../Core/Src/set_win.c:337:6:Setting_mask_event_cb	3
+../Core/Src/set_win.c:347:6:setting_close_event_cb	2
+../Core/Src/set_win.c:357:6:Setting_window_close	11
