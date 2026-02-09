@@ -1,4 +1,4 @@
-Core/Src/ax_mcu_if.o: ../Core/Src/ax_mcu_if.c ../Core/Inc/ax_mcu_if.h \
+Core/Src/ax_mcu_if.o: ../Core/Src/ax_mcu_if.c ../Core/Src/ax_mcu_if.h \
  ../Core/Inc/main.h ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../Core/Inc/stm32h7xx_hal_conf.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -38,8 +38,8 @@ Core/Src/ax_mcu_if.o: ../Core/Src/ax_mcu_if.c ../Core/Inc/ax_mcu_if.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- ../Core/Inc/user_def.h
-../Core/Inc/ax_mcu_if.h:
+ ../Core/Src/user_def.h
+../Core/Src/ax_mcu_if.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -80,4 +80,4 @@ Core/Src/ax_mcu_if.o: ../Core/Src/ax_mcu_if.c ../Core/Inc/ax_mcu_if.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-../Core/Inc/user_def.h:
+../Core/Src/user_def.h:

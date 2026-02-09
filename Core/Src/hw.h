@@ -1,6 +1,6 @@
 #include "com_define.h"
 
-typedef struct
+typedef struct 
 {
   uint32_t magic_number;
   char     version_str[32];

@@ -8,3 +8,4 @@
 ../Core/Src/stm32h7xx_it.c:181:6:ETH_IRQHandler	8	static
 ../Core/Src/stm32h7xx_it.c:195:6:LTDC_IRQHandler	8	static
 ../Core/Src/stm32h7xx_it.c:209:6:LTDC_ER_IRQHandler	8	static
+../Core/Src/stm32h7xx_it.c:221:6:USART2_IRQHandler	8	static

@@ -1,6 +1,6 @@
 ../Core/Src/lv_port_indev.c:312:13:touchpad_read	0	static
 ../Core/Src/lv_port_indev.c:148:13:encoder_read	8	static
-../Core/Src/lv_port_indev.c:264:13:button_read	16	static
+../Core/Src/lv_port_indev.c:264:13:button_read	8	static
 ../Core/Src/lv_port_indev.c:203:13:keypad_read	24	static
 ../Core/Src/lv_port_indev.c:68:14:lv_port_indev_get_encoder	0	static
 ../Core/Src/lv_port_indev.c:69:14:lv_port_indev_get_keypad	0	static

@@ -1,0 +1,6 @@
+../Core/Src/mod_win.c:13:6:Mode_window_open	80	static
+../Core/Src/mod_win.c:5:6:mode_start_btn_event_cb	8	static
+../Core/Src/mod_win.c:194:6:Mode_window_close	24	static
+../Core/Src/mod_win.c:185:6:Mode_mask_event_cb	16	static
+../Core/Src/mod_win.c:226:6:mode_btn_event_cb	16	static
+../Core/Src/mod_win.c:246:6:Mode_close_btn_cb	16	static

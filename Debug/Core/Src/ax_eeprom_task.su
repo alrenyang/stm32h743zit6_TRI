@@ -1,6 +1,6 @@
-../Core/Src/ax_eeprom_task.c:15:6:eeprom_test1	8	static
-../Core/Src/ax_eeprom_task.c:37:6:eeprom_save_facotry	16	static
-../Core/Src/ax_eeprom_task.c:102:6:eeprom_load_factory	4	static
+../Core/Src/ax_eeprom_task.c:16:6:eeprom_test1	8	static
+../Core/Src/ax_eeprom_task.c:38:6:eeprom_save_facotry	24	static
+../Core/Src/ax_eeprom_task.c:103:6:eeprom_load_factory	4	static
 ../Core/Src/ax_eeprom_task.c:109:6:eeprom_save_sys	40	static
 ../Core/Src/ax_eeprom_task.c:143:6:eeprom_load_sys	40	static
 ../Core/Src/ax_eeprom_task.c:194:6:eeprom_save_user	24	static

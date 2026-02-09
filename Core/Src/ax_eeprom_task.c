@@ -12,6 +12,7 @@
 #include "ax_mcu_if.h"
 #include "packet_task.h"
 
+
 void eeprom_test1(void)
 {
 	g_user_default = 0;
@@ -63,9 +64,9 @@ void eeprom_save_facotry(void)
 	{
 		for(i=0; i<16; i++)
 		{
-			g_seq_con.page_con[j].ch_con[i].delay = 10;
-			g_seq_con.page_con[j].ch_con[i].on = 20;
-			g_seq_con.page_con[j].ch_con[i].block = 30;
+			g_seq_con.page_con[j].ch_con[i].delay = 990+j;
+			g_seq_con.page_con[j].ch_con[i].on = 330+j;
+			g_seq_con.page_con[j].ch_con[i].block = 440+j;
 			g_seq_con.page_con[j].ch_con[i].trig_mode = 0;
 		}
 	}
@@ -103,7 +104,6 @@ void eeprom_load_factory(void)
 {
 
 }
-
 
 
 void eeprom_save_sys(void)

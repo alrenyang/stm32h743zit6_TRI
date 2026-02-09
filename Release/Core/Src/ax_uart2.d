@@ -1,4 +1,4 @@
-Core/Src/ax_uart2.o: ../Core/Src/ax_uart2.c ../Core/Inc/user_def.h \
+Core/Src/ax_uart2.o: ../Core/Src/ax_uart2.c ../Core/Src/user_def.h \
  ../Core/Inc/main.h ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../Core/Inc/stm32h7xx_hal_conf.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -38,8 +38,8 @@ Core/Src/ax_uart2.o: ../Core/Src/ax_uart2.c ../Core/Inc/user_def.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- ../Core/Inc/ax_uart2.h
-../Core/Inc/user_def.h:
+ ../Core/Src/ax_uart2.h
+../Core/Src/user_def.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -80,4 +80,4 @@ Core/Src/ax_uart2.o: ../Core/Src/ax_uart2.c ../Core/Inc/user_def.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-../Core/Inc/ax_uart2.h:
+../Core/Src/ax_uart2.h:

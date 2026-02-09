@@ -1,0 +1,8 @@
+../Core/Src/int_win.c:447:6:int_btn_event_cb	32	static
+/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/Middlewares/lvgl/src/core/lv_obj_style.h:196:20:lv_obj_set_style_pad_all.constprop	16	static
+../Core/Src/int_win.c:109:6:Int_window_close	24	static
+../Core/Src/int_win.c:136:6:Int_mask_event_cb	16	static
+../Core/Src/int_win.c:497:6:Int_close_btn_cb	16	static
+../Core/Src/int_win.c:507:6:int_set_btn_text	24	static
+../Core/Src/int_win.c:22:6:int_target_btn_event_cb	40	static
+../Core/Src/int_win.c:145:6:Int_window_open	80	static

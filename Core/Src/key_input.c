@@ -180,7 +180,7 @@ int16_t KeyInput_EncoderGetDiffAndClear(void)
 {
     int16_t d;
 
-    uint32_t primask = __get_PRIMASK();
+    uint32_t primask = __get_PRIMASK(); 
     __disable_irq();
 
     d = s_enc_diff;

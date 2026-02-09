@@ -4,8 +4,8 @@
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:2025:13:DMA_CalcDMAMUXRequestGenBaseAndMask	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:216:19:HAL_DMA_Init	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:468:19:HAL_DMA_DeInit	8	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:625:19:HAL_DMA_Start	16	static
-../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:681:19:HAL_DMA_Start_IT	16	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:625:19:HAL_DMA_Start	32	static
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:681:19:HAL_DMA_Start_IT	32	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:781:19:HAL_DMA_Abort	24	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:897:19:HAL_DMA_Abort_IT	8	static
 ../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c:981:19:HAL_DMA_PollForTransfer	40	static

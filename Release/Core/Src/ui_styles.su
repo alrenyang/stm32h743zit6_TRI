@@ -1,0 +1,2 @@
+../Core/Src/ui_styles.c:13:6:ui_styles_init	24	static
+../Core/Src/ui_styles.c:33:6:ui_styles_init_set_btn	32	static

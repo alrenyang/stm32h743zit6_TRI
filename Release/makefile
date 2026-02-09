@@ -174,40 +174,40 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := stm32h743zit6
+BUILD_ARTIFACT_NAME := STM32H743ZIT6
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-stm32h743zit6.elf \
+STM32H743ZIT6.elf \
 
 MAP_FILES += \
-stm32h743zit6.map \
+STM32H743ZIT6.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-stm32h743zit6.list \
+STM32H743ZIT6.list \
 
 OBJCOPY_HEX += \
-stm32h743zit6.hex \
+STM32H743ZIT6.hex \
 
 OBJCOPY_BIN += \
-stm32h743zit6.bin \
+STM32H743ZIT6.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: stm32h743zit6.elf secondary-outputs
+main-build: STM32H743ZIT6.elf secondary-outputs
 
 # Tool invocations
-stm32h743zit6.elf stm32h743zit6.map: $(OBJS) $(USER_OBJS) D:\proj_triv\work2\stm32h743zit6_TRI-main\STM32H743ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32h743zit6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\proj_triv\work2\stm32h743zit6_TRI-main\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32h743zit6.map" -Wl,--gc-sections -static -Wl,-z,noexecstack --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32H743ZIT6.elf STM32H743ZIT6.map: $(OBJS) $(USER_OBJS) /Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/STM32H743ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32H743ZIT6.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/alrenm3/work/Ihill/UB100/firmware/STM32H743ZIT6/STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32H743ZIT6.map" -Wl,--gc-sections -static -Wl,-z,noexecstack --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -216,24 +216,24 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-stm32h743zit6.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "stm32h743zit6.list"
+STM32H743ZIT6.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "STM32H743ZIT6.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-stm32h743zit6.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "stm32h743zit6.hex"
+STM32H743ZIT6.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "STM32H743ZIT6.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-stm32h743zit6.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "stm32h743zit6.bin"
+STM32H743ZIT6.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "STM32H743ZIT6.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout stm32h743zit6.bin stm32h743zit6.elf stm32h743zit6.hex stm32h743zit6.list stm32h743zit6.map
+	-$(RM) STM32H743ZIT6.bin STM32H743ZIT6.elf STM32H743ZIT6.hex STM32H743ZIT6.list STM32H743ZIT6.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)

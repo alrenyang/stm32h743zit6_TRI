@@ -1,4 +1,4 @@
-Core/Src/ax_eeprom.o: ../Core/Src/ax_eeprom.c ../Core/Inc/ax_eeprom.h \
+Core/Src/ax_eeprom.o: ../Core/Src/ax_eeprom.c ../Core/Src/ax_eeprom.h \
  ../Core/Inc/main.h ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../Core/Inc/stm32h7xx_hal_conf.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -38,8 +38,8 @@ Core/Src/ax_eeprom.o: ../Core/Src/ax_eeprom.c ../Core/Inc/ax_eeprom.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- ../Core/Inc/user_def.h ../Core/Inc/ax_uart2.h ../Core/Inc/packet_task.h
-../Core/Inc/ax_eeprom.h:
+ ../Core/Src/user_def.h ../Core/Src/ax_uart2.h ../Core/Src/packet_task.h
+../Core/Src/ax_eeprom.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -80,6 +80,6 @@ Core/Src/ax_eeprom.o: ../Core/Src/ax_eeprom.c ../Core/Inc/ax_eeprom.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-../Core/Inc/user_def.h:
-../Core/Inc/ax_uart2.h:
-../Core/Inc/packet_task.h:
+../Core/Src/user_def.h:
+../Core/Src/ax_uart2.h:
+../Core/Src/packet_task.h:
